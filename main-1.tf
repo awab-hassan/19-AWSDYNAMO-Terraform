@@ -15,7 +15,7 @@ provider "aws" {
 
 locals {
   envs = {
-    staging    = { name_prefix = "staging", deletion_protection = false }
+    staging    = { name_prefix = "stage", deletion_protection = false }
     production = { name_prefix = "",        deletion_protection = true  }
   }
 }

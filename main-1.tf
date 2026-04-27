@@ -34,7 +34,7 @@ resource "aws_dynamodb_table" "networking_registry" {
   attribute { name = "ALTPK";      type = "S" }
   attribute { name = "ALTSK";      type = "S" }
   attribute { name = "creator_id"; type = "S" }
-  attribute { name = "fan_id";     type = "S" }
+  attribute { name = "user_id";     type = "S" }
 
   global_secondary_index {
     name            = "GSI_AllKey"
@@ -51,8 +51,8 @@ resource "aws_dynamodb_table" "networking_registry" {
   }
 
   global_secondary_index {
-    name            = "fan_records_index"
-    hash_key        = "fan_id"
+    name            = "user_records_index"
+    hash_key        = "user_id"
     range_key       = "PK"
     projection_type = "ALL"
   }
@@ -81,7 +81,7 @@ resource "aws_dynamodb_table" "transaction_registry" {
   attribute { name = "ALTPK";           type = "S" }
   attribute { name = "ALTSK";           type = "S" }
   attribute { name = "creator_id";      type = "S" }
-  attribute { name = "fan_id";          type = "S" }
+  attribute { name = "user_id";          type = "S" }
   attribute { name = "GSI_Payout_PK";   type = "S" }
   attribute { name = "transaction_date"; type = "S" }
   attribute { name = "order_id";        type = "S" }
@@ -101,8 +101,8 @@ resource "aws_dynamodb_table" "transaction_registry" {
   }
 
   global_secondary_index {
-    name            = "fan_records_index"
-    hash_key        = "fan_id"
+    name            = "user_records_index"
+    hash_key        = "user_id"
     range_key       = "PK"
     projection_type = "ALL"
   }

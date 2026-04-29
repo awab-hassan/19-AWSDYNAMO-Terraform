@@ -1,4 +1,4 @@
-# dynamodb-registry-terraform
+# Project # 19 - Dynamodb Registry Terraform
 
 Terraform module that provisions six DynamoDB tables across three registries (Networking, Transaction, AggregatedData), each deployed as a staging and production pair, with purpose-built Global Secondary Indexes (GSIs) for the platform's core access patterns.
 
